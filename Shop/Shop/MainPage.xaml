@@ -10,9 +10,6 @@
         <DataTemplate>
             <ContentPage>
                 <StackLayout Padding="20">
-                    <SearchBar x:Name="searchBar"
-                       Placeholder="Поиск товара"
-                       TextChanged="OnSearchTextChanged" />
                     <Label Text="{Binding Name}"
                        FontSize="24"
                        HorizontalOptions="Center" />
