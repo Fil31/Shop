@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="Shop.MainPage"
+          ItemsSource="{Binding Products}"
+          xmlns:local="clr-namespace:Shop"
+          BackgroundColor="White"
+          Title="Каталог товаров">
+    <CarouselPage.ItemTemplate>
+        <DataTemplate>
+            <ContentPage>
+                <StackLayout Padding="20">
+                    <SearchBar x:Name="searchBar"
+                       Placeholder="Поиск товара"
+                       TextChanged="OnSearchTextChanged" />
+                    <Label Text="{Binding Name}"
+                       FontSize="24"
+                       HorizontalOptions="Center" />
+                    <Image Source="{Binding ImageUrl}"
+                       WidthRequest="300"
+                       HeightRequest="300"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center" />
+                    <Label Text="{Binding Price, StringFormat='Цена: {0} евро.'}"
+                       FontSize="18"
+                       HorizontalOptions="Center" />
+                    <Button Text="Купить"
+                        BackgroundColor="Green"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        Clicked="OnBuyClicked" />
+                </StackLayout>
+            </ContentPage>
+        </DataTemplate>
+    </CarouselPage.ItemTemplate>
+</CarouselPage>
